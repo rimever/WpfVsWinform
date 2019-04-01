@@ -26,5 +26,18 @@ namespace WpfVsWinForm.Benchmark.Tests
             var benchmark = new SimpleWindowBenchmark();
             benchmark.LaunchWinFormSimpleWindow();
         }
+        [Test]
+        public void LaunchWpfCoreSimpleWindow()
+        {
+            var benchmark = new SimpleWindowBenchmark();
+            benchmark.LaunchWpfCoreSimpleWindow();
+        }
+        [Test]
+        public void LaunchWinFormsSimpleWindow()
+        {
+            var benchmark = new SimpleWindowBenchmark();
+            benchmark.LaunchWinFormCoreSimpleWindow();
+        }
+
     }
 }

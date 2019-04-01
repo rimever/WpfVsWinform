@@ -10,7 +10,8 @@ using FlaUI.UIA3;
 
 namespace WpfVsWinForm.Benchmark
 {
-    [MarkdownExporter,CsvExporter]
+    [MemoryDiagnoser]
+    [MarkdownExporter, CsvExporter]
     public class SimpleWindowBenchmark
     {
         /// <summary>
@@ -44,6 +45,19 @@ namespace WpfVsWinForm.Benchmark
         public void LaunchWinFormSimpleWindow()
         {
             string path = Path.Combine(RootDirectory, "WinFormSimpleWindow", "bin", "Release", "WinFormSimpleWindow.exe");
+            Launch(path);
+        }
+        [Benchmark]
+        public void LaunchWpfCoreSimpleWindow()
+        {
+            string path = Path.Combine(RootDirectory, "WpfCoreSimpleWindow", "bin", "Release", "netcoreapp3.0", "WpfCoreSimpleWindow.exe");
+            Launch(path);
+        }
+
+        [Benchmark]
+        public void LaunchWinFormCoreSimpleWindow()
+        {
+            string path = Path.Combine(RootDirectory, "WinFormsCoreSimpleWindow", "bin", "Release", "netcoreapp3.0", "WinFormsCoreSimpleWindow.exe");
             Launch(path);
         }
     }

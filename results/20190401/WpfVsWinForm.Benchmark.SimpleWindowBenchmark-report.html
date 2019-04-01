@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>WpfVsWinForm.Benchmark.SimpleWindowBenchmark</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.11.1, OS=Windows 10.0.17134.648 (1803/April2018Update/Redstone4)
+Intel Core i7-7920HQ CPU 3.10GHz (Kaby Lake), 1 CPU, 2 logical and 2 physical cores
+  [Host]     : .NET Framework 4.7.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.3362.0
+  DefaultJob : .NET Framework 4.7.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.7.3362.0
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                 Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>LaunchWpfSimpleWindow</td><td>2,372.5 ms</td><td>49.05 ms</td><td>141.51 ms</td><td>2,354.2 ms</td><td>880 KB</td>
+</tr><tr><td>LaunchWinFormSimpleWindow</td><td>879.7 ms</td><td>34.25 ms</td><td>99.89 ms</td><td>870.7 ms</td><td>136 KB</td>
+</tr><tr><td>LaunchWpfCoreSimpleWindow</td><td>3,013.0 ms</td><td>58.58 ms</td><td>101.06 ms</td><td>3,028.7 ms</td><td>760 KB</td>
+</tr><tr><td>LaunchWinFormCoreSimpleWindow</td><td>1,942.1 ms</td><td>41.54 ms</td><td>122.47 ms</td><td>2,012.2 ms</td><td>136 KB</td>
+</tr></tbody></table>
+</body>
+</html>
